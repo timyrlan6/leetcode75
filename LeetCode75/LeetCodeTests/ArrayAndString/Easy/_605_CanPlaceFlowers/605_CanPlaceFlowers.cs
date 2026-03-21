@@ -21,7 +21,23 @@ namespace LeetCodeTests.ArrayAndString.Easy._605_CanPlaceFlowers
     {
         public bool CanPlaceFlowers(int[] flowerbed, int n)
         {
-            return default;
+            var count = 0;
+            for (int i = 0; i < flowerbed.Length && count < n; i++)
+            {
+                if (flowerbed[i] == 1)
+                {
+                    i++;
+                    continue;
+                }
+
+                if (i >= 0 && flowerbed[i - 1] == 1) continue;
+                if (i + 1 < flowerbed.Length && flowerbed[i + 1] == 1) continue;
+
+                count++;
+                i++;
+            }
+
+            return count >= n;
         }
     }
 
