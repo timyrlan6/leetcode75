@@ -17,9 +17,32 @@ namespace LeetCodeTests.ArrayAndString.Easy._345_ReverseVowelsOfAString
 
     public class Solution
     {
+        public const string Vowels = "aeiou";
+
         public string ReverseVowels(string s)
         {
-            return default;
+            var left = -1;
+
+            var right = s.Length;
+            var arr = s.ToArray();
+            bool seachLeft = true;
+            while (left < right)
+            {
+                if (seachLeft)
+                {
+                    if (Vowels.Contains(arr[++left])) seachLeft = false;
+                }
+                else
+                {
+                    if (Vowels.Contains(arr[--right]))
+                    {
+                        seachLeft = true;
+                        (arr[left], arr[right]) = (arr[right], arr[left]);
+                    }
+                }
+            }
+
+            return new string(arr);
         }
     }
 
