@@ -2,8 +2,7 @@ namespace LeetCodeTests.ArrayAndString.Easy._605_CanPlaceFlowers
 {
     //You have a long flowerbed in which some of the plots are planted, and some are not.
 //However, flowers cannot be planted in adjacent plots.
-//Given an integer array flowerbed containing 0's and 1's, and an integer n,
-//return true if n new flowers can be planted without violating the rule.
+//Given an integer array flowerbed containing 0's and 1's, and an integer n, return true if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule.
 //
 //Example 1:
 //Input: flowerbed = [1,0,0,0,1], n = 1
