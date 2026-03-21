@@ -16,8 +16,11 @@ namespace LeetCodeTests.ArrayAndString.Easy._1431_KidsWithTheGreatestNumberOfCan
     {
         public IList<bool> KidsWithCandies(int[] candies, int extraCandies)
         {
-            return default;
+            var max = candies.Max();
+            return candies.Select(c => c + extraCandies >= max).ToList();
         }
+
+        
     }
 
     public class Tests
