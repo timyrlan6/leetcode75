@@ -23,7 +23,53 @@ namespace LeetCodeTests.ArrayAndString.Easy._1071_GreatestCommonDivisorOfStrings
     {
         public string GcdOfStrings(string str1, string str2)
         {
-            return default;
+            if (str1 == str2) return str1;
+            var s1 = str1;
+            var s2 = str2;
+            if (str1.Length > str2.Length)
+            {
+                s1 = str2;
+                s2 = str1;
+            }
+
+            var length = s1.Length;
+
+
+            while (length > 0)
+            {
+                var padding = 0;
+                while (padding + length <= s1.Length)
+                {
+                    var substr = s1.Substring(padding, length);
+                    if (IsDivde(substr, s2)) return substr;
+                    padding++;
+                }
+
+                length--;
+            }
+
+
+            return String.Empty;
+        }
+
+
+        private bool IsDivde(string s1, string s2)
+        {
+            var padding = 0;
+
+            while (padding <= s2.Length)
+            {
+                for (int i = 0; i < s1.Length; i++)
+                {
+                    if (padding + i >= s2.Length) return i == 0;
+                    if (s2[padding + i] != s1[i]) return false;
+                }
+
+                padding += s1.Length;
+            }
+
+
+            return true;
         }
     }
 
