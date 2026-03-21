@@ -1,6 +1,6 @@
 namespace LeetCodeTests.ArrayAndString.Easy._1431_KidsWithTheGreatestNumberOfCandies
 {
-	//There are n kids with candies.
+    //There are n kids with candies.
 //You are given an integer array candies, where each candies[i] represents the number of candies the ith kid has,
 //and an integer extraCandies.
 //Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies,
@@ -15,21 +15,21 @@ namespace LeetCodeTests.ArrayAndString.Easy._1431_KidsWithTheGreatestNumberOfCan
 //1 <= candies[i] <= 100
 //1 <= extraCandies <= 50
 
-	public class Solution
-	{
-		public IList<bool> KidsWithCandies(int[] candies, int extraCandies)
-		{
-			return default;
-		}
-	}
+    public class Solution
+    {
+        public IList<bool> KidsWithCandies(int[] candies, int extraCandies)
+        {
+            return default;
+        }
+    }
 
-	public class Tests
-	{
-		[Test]
-		public void Test1()
-		{
-			var result = new Solution().KidsWithCandies(new[] { 2, 3, 5, 1, 3 }, 3);
-			Assert.That(result, Is.EqualTo(new[] { true, true, true, false, true }));
-		}
-	}
+    public class Tests
+    {
+        [Test]
+        public void Test1()
+        {
+            var result = new Solution().KidsWithCandies(new[] { 2, 3, 5, 1, 3 }, 3);
+            Assert.That(result, Is.EqualTo(new[] { true, true, true, false, true }));
+        }
+    }
 }
