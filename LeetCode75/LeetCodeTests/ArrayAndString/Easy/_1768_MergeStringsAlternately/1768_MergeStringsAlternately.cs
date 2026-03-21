@@ -23,7 +23,25 @@ namespace LeetCodeTests.ArrayAndString.Easy._1768_MergeStringsAlternately
     {
         public string MergeAlternately(string word1, string word2)
         {
-            return default;
+            var arr = new char[word1.Length + word2.Length];
+            int i = 0, j = 0, k = 0;
+            while (i < word1.Length && j < word2.Length)
+            {
+                arr[k++] = word1[i++];
+                arr[k++] = word2[j++];
+            }
+
+            while (i < word1.Length)
+            {
+                arr[k++] = word1[i++];
+            }
+
+            while (j < word2.Length)
+            {
+                arr[k++] = word2[j++];
+            }
+
+            return new string(arr);
         }
     }
 
