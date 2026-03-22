@@ -34,14 +34,13 @@ namespace LeetCodeTests.ArrayAndString.Easy._1071_GreatestCommonDivisorOfStrings
 
             var length = s1.Length;
 
-
             while (length > 0)
             {
                 var padding = 0;
                 while (padding + length <= s1.Length)
                 {
                     var substr = s1.Substring(padding, length);
-                    if (IsDivde(substr, s2)) return substr;
+                    if (IsDivde(substr, s2)&& IsDivde(substr, s1)) return substr;
                     padding++;
                 }
 
@@ -94,6 +93,13 @@ namespace LeetCodeTests.ArrayAndString.Easy._1071_GreatestCommonDivisorOfStrings
         {
             var result = new Solution().GcdOfStrings("LEET", "CODE");
             Assert.That(result, Is.EqualTo(""));
+        }
+
+        [Test]
+        public void Test4()
+        {
+            var result = new Solution().GcdOfStrings("TAUXXTAUXXTAUXXTAUXXTAUXX", "TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX");
+            Assert.That(result, Is.EqualTo("TAUXX"));
         }
     }
 }
