@@ -30,7 +30,7 @@ namespace LeetCodeTests.ArrayAndString.Easy._605_CanPlaceFlowers
                     continue;
                 }
 
-                if (i >= 0 && flowerbed[i - 1] == 1) continue;
+                if (i > 0 && flowerbed[i - 1] == 1) continue;
                 if (i + 1 < flowerbed.Length && flowerbed[i + 1] == 1) continue;
 
                 count++;
@@ -55,6 +55,14 @@ namespace LeetCodeTests.ArrayAndString.Easy._605_CanPlaceFlowers
         {
             var result = new Solution().CanPlaceFlowers(new[] { 1, 0, 0, 0, 1 }, 2);
             Assert.That(result, Is.EqualTo(false));
+        }
+
+
+        [Test]
+        public void Test3()
+        {
+            var result = new Solution().CanPlaceFlowers(new[] { 0, 0, 1, 0, 1 }, 1);
+            Assert.That(result, Is.EqualTo(true));
         }
     }
 }
