@@ -19,8 +19,6 @@ namespace LeetCodeTests.ArrayAndString.Easy._1431_KidsWithTheGreatestNumberOfCan
             var max = candies.Max();
             return candies.Select(c => c + extraCandies >= max).ToList();
         }
-
-        
     }
 
     public class Tests

@@ -30,11 +30,13 @@ namespace LeetCodeTests.ArrayAndString.Easy._345_ReverseVowelsOfAString
             {
                 if (seachLeft)
                 {
-                    if (Vowels.Contains(arr[++left])) seachLeft = false;
+                    ++left;
+                    if (left>=s.Length) break;
+                    if (Vowels.Contains(arr[left], StringComparison.InvariantCultureIgnoreCase)) seachLeft = false;
                 }
                 else
                 {
-                    if (Vowels.Contains(arr[--right]))
+                    if (Vowels.Contains(arr[--right], StringComparison.InvariantCultureIgnoreCase))
                     {
                         seachLeft = true;
                         (arr[left], arr[right]) = (arr[right], arr[left]);
@@ -60,6 +62,20 @@ namespace LeetCodeTests.ArrayAndString.Easy._345_ReverseVowelsOfAString
         {
             var result = new Solution().ReverseVowels("leetcode");
             Assert.That(result, Is.EqualTo("leotcede"));
+        }
+
+        [Test]
+        public void Test3()
+        {
+            var result = new Solution().ReverseVowels("IceCreAm");
+            Assert.That(result, Is.EqualTo("AceCreIm"));
+        }
+
+        [Test]
+        public void Test4()
+        {
+            var result = new Solution().ReverseVowels(" ");
+            Assert.That(result, Is.EqualTo(" "));
         }
     }
 }
