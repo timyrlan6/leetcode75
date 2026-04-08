@@ -23,7 +23,7 @@ namespace LeetCodeTests.ArrayAndString.Medium._238_ProductOfArrayExceptSelf
 	{
 		public int[] ProductExceptSelf(int[] nums)
 		{
-
+			return default;
 		}
 	}
 
