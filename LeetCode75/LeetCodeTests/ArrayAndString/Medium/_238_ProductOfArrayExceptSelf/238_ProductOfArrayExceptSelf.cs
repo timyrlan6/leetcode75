@@ -23,26 +23,7 @@ namespace LeetCodeTests.ArrayAndString.Medium._238_ProductOfArrayExceptSelf
 	{
 		public int[] ProductExceptSelf(int[] nums)
 		{
-		    var n = nums.Length;
-		    var result = new int[n];
 
-		    // Initialize prefix product
-		    var prefix = 1;
-		    for (var i = 0; i < n; i++)
-		    {
-		        result[i] = prefix;
-		        prefix *= nums[i];
-		    }
-
-		    // Initialize suffix product and combine with prefix
-		    var suffix = 1;
-		    for (var i = n - 1; i >= 0; i--)
-		    {
-		        result[i] *= suffix;
-		        suffix *= nums[i];
-		    }
-
-		    return result;
 		}
 	}
 
