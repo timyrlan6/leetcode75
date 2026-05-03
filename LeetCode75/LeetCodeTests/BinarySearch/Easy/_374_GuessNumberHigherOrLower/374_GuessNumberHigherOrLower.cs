@@ -1,3 +1,5 @@
+using System;
+
 namespace LeetCodeTests.BinarySearch.Easy._374_GuessNumberHigherOrLower
 {
     //We are playing the Guess Game. The game is as follows:
@@ -23,7 +25,7 @@ namespace LeetCodeTests.BinarySearch.Easy._374_GuessNumberHigherOrLower
         public int GuessNumber(int n)
         {
             return default;
-        }
+        }        
     }
 
     public class Tests
