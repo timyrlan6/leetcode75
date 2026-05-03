@@ -23,7 +23,25 @@ namespace LeetCodeTests.ArrayAndString.Medium._238_ProductOfArrayExceptSelf
 	{
 		public int[] ProductExceptSelf(int[] nums)
 		{
-			return default;
+			var arr = new int[nums.Length][];
+			var product = 1;
+            for (int i = 0; i < nums.Length; i++)
+            {
+				arr[i] = new int[2] {product,1};
+				product *= nums[i];
+            }
+
+			product = 1;
+
+            for (int i = nums.Length-1; i >=0; i--)
+            {
+				arr[i][1] = product;
+				product *= nums[i];
+            }
+
+			
+
+            return arr.Select(c => c[0] * c[1]).ToArray();
 		}
 	}
 
